@@ -4,7 +4,7 @@ __author__ = 'Derek Stegelman'
 
 import json
 import requests
-import urllib
+from urllib.parse import urlencode
 
 from .beer import Beer, Beers
 from .brewery import Brewery, Breweries
@@ -40,7 +40,7 @@ class BreweryDB(object):
         
         :returns:  str -- URL encoded query parameters
         """
-        return urllib.urlencode(params)
+        return urlencode(params)
     
     def search_beer(self, beer_name):
         """ Search the BreweryDB for a beer.  Returns a
